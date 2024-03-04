@@ -26,14 +26,14 @@
   </head>
   <body>
     <div id="chat-container">
-      <div id="chat-area">Hiiii</div>
+      <div id="chat-area"></div>
       <div id="input-container">
         <input
           type="text"
           id="message-input"
           placeholder="Type your message..."
         />
-        <button onclick="sendMessage()">Send</button>
+        <button onclick="sendMessage()" id="enterdata">Send</button>
       </div>
     </div>
     <script>
@@ -47,8 +47,14 @@
       messageInput.addEventListener("focus", scrollToBottom);
 
       function sendMessage() {
-        // Handle sending message logic
-        // After sending the message, scroll to the bottom again
+        let msg = document.getElementById("message-input");
+        let messageText = msg.value;
+        let messageDiv = document.createElement("div");
+        messageDiv.textContent = messageText;
+
+        chatArea.appendChild(messageDiv);
+        console.log(messageText);
+        messageInput.value = "";
         scrollToBottom();
       }
     </script>

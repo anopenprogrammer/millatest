@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Extraction Example</title>
+  </head>
+  <body>
+    <label for="myTextbox">Enter text:</label>
+    <input type="text" id="myTextbox" />
+    <button onclick="extractText()">Extract Text</button>
+
+    <script>
+      function extractText() {
+        // Get the textbox element
+        let textbox = document.getElementById("myTextbox");
+
+        // Get the value entered in the textbox
+        let enteredText = textbox.value;
+
+        // Display the extracted text (you can do whatever you want with it)
+        console.log("Entered text: " + enteredText);
+      }
+    </script>
+  </body>
+</html>
