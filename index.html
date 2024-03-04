@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #chat-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh; /* Adjust as needed */
+      }
+
+      #chat-area {
+        flex-grow: 1;
+        overflow-y: auto;
+      }
+
+      #input-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chat-container">
+      <div id="chat-area">Hiiii</div>
+      <div id="input-container">
+        <input
+          type="text"
+          id="message-input"
+          placeholder="Type your message..."
+        />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+    <script>
+      const chatArea = document.getElementById("chat-area");
+      const messageInput = document.getElementById("message-input");
+
+      function scrollToBottom() {
+        chatArea.scrollTop = chatArea.scrollHeight;
+      }
+
+      messageInput.addEventListener("focus", scrollToBottom);
+
+      function sendMessage() {
+        // Handle sending message logic
+        // After sending the message, scroll to the bottom again
+        scrollToBottom();
+      }
+    </script>
+  </body>
+</html>
